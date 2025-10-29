@@ -6,6 +6,7 @@ import jakarta.annotation.PreDestroy;
 import org.springframework.boot.test.context.TestConfiguration;
 import redis.embedded.RedisServer;
 
+import java.io.File;
 import java.io.IOException;
 
 @TestConfiguration
@@ -15,6 +16,7 @@ public class TestRedisConfiguration {
 
     public TestRedisConfiguration(RedisProperties redisProperties) throws IOException {
         this.redisServer = new RedisServer(redisProperties.getPort());
+//        this.redisServer = new RedisServer(redisProperties.getPort(), new File("/usr/bin/redis-server"));
     }
 
     @PostConstruct
