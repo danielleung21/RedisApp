@@ -4,6 +4,9 @@ import com.daniel.topaz.rba.dm.Student;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+/**
+ * Redis Repositories do not work with transaction, whereas RedisTemplate does.
+ */
 @Repository
 public interface StudentRepository extends CrudRepository<Student, String> {
 }
